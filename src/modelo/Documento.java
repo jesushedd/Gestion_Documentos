@@ -1,4 +1,4 @@
-package documento;
+package modelo;
 
 import java.time.LocalDate;
 
@@ -13,11 +13,18 @@ public class Documento {
     public Documento(Estado estado){
         this.fecha = LocalDate.now();
         this.estado = estado;
-        this.numeroExpediente  = 0;
     }
 
     public Documento(int id, Integer numeroExpediente, LocalDate fecha, String tipo, String remitente, Estado estado) {
         this.id = id;
+        this.numeroExpediente = numeroExpediente;
+        this.fecha = fecha;
+        this.tipo = tipo;
+        this.remitente = remitente;
+        this.estado = estado;
+    }
+
+    public Documento(Integer numeroExpediente, LocalDate fecha, String tipo, String remitente, Estado estado) {
         this.numeroExpediente = numeroExpediente;
         this.fecha = fecha;
         this.tipo = tipo;
@@ -86,10 +93,5 @@ public class Documento {
     }
 
 
-    public enum Estado {
-        PENDIENTE,
-        EN_REVISION,
-        APROBADO,
-        RECHAZADO
-    }
+
 }

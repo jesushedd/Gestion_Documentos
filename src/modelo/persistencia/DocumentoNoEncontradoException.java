@@ -1,4 +1,4 @@
-package persistencia;
+package modelo.persistencia;
 
 public class DocumentoNoEncontradoException extends Exception {
     public DocumentoNoEncontradoException(String message) {
