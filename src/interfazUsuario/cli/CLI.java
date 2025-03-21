@@ -6,6 +6,19 @@ import interfazUsuario.ObservadorOrden;
 import java.util.Scanner;
 
 public class CLI implements ObservadorOrden, ObservadorContenido {
+
+
+    public enum Menu {
+        DOCUMENTO_VARIOS,
+        DOCUMENTO_UNICO,
+        PRINCIPAL,
+        SALIR,
+        EXPEDIENTE_VARIOS,
+        CREAR_DOCUMENTO
+    }
+
+
+
     private Menu estadoMenu = Menu.PRINCIPAL;
     private int opcion;
     private Scanner scanner = new Scanner(System.in);
@@ -38,6 +51,10 @@ public class CLI implements ObservadorOrden, ObservadorContenido {
                 estadoMenu = Menu.DOCUMENTO_VARIOS;
                 break;
             case 2:
+                estadoMenu = Menu.EXPEDIENTE_VARIOS;
+                break;
+            case 3:
+                estadoMenu = Menu.CREAR_DOCUMENTO;
         }
     }
 
@@ -57,4 +74,6 @@ public class CLI implements ObservadorOrden, ObservadorContenido {
         var cli = new CLI();
         cli.mostrarMenuPrincipal();
     }
+
+
 }
