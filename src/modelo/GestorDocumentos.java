@@ -48,15 +48,8 @@ public class GestorDocumentos {
     }
 
 
-
-    public  void ordenarPorFechaLejana(){
-        tipoOrdenamiento = Comparator.comparing(Documento::getFecha);
-        repositorio.sort(tipoOrdenamiento);
-        notificarOrden();
-    }
-
-    public void ordenarPorFechaCercana(){
-        tipoOrdenamiento = Comparator.comparing(Documento::getFecha).reversed();
+    public void ordenarPor(Comparator<Documento> comparador){
+        tipoOrdenamiento = comparador;
         repositorio.sort(tipoOrdenamiento);
         notificarOrden();
     }
@@ -71,17 +64,7 @@ public class GestorDocumentos {
         }
     }
 
-    public void ordenarPorNumeroExpedienteAsc(){
-        tipoOrdenamiento = Comparator.comparing(Documento::getNumeroExpediente);
-        repositorio.sort(tipoOrdenamiento);
-        notificarOrden();
-    }
 
-    public void ordenarPorNumeroExpedienteDesc(){
-        tipoOrdenamiento = Comparator.comparing(Documento::getNumeroExpediente);
-        repositorio.sort(tipoOrdenamiento);
-        notificarOrden();
-    }
 
     public void seleccionarDocumento(int id){
         var doc =  repositorio.stream().filter(documento -> {
@@ -118,11 +101,7 @@ public class GestorDocumentos {
 
     }
 
-    public void ordenarPorTipo(){
-        tipoOrdenamiento = Comparator.comparing(Documento::getTipo);
-        repositorio.sort(tipoOrdenamiento);
-        notificarOrden();
-    }
+
 
     public void subirArchivos(){
         //TODO
