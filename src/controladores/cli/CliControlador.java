@@ -1,12 +1,13 @@
 package controladores.cli;
 
+import controladores.Controlador;
 import interfazUsuario.cli.CLI;
 import modelo.ComparadoresDocumento;
 import modelo.Documento;
 import modelo.GestorDocumentos;
 import java.util.List;
 
-public class CliControlador implements ControladorCLI {
+public class CliControlador implements Controlador {
     CLI interfaz;
     GestorDocumentos gestor;
 

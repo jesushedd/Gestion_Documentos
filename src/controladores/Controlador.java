@@ -1,6 +1,6 @@
-package controladores.cli;
+package controladores;
 
-public interface ControladorCLI {
+public interface Controlador {
     void solicitarDatos();
 
     void ordenarPorFechaAsc();
