@@ -97,7 +97,7 @@ public class GestorDocumentos {
 
 
 
-    public void obtenerTodosDocumentos(){
+    public void cargarDocumentosTodos(){
         try {
             List<Documento> documentos =  documentoDAO.obtenerDocumentos();
             repositorio.clear();
@@ -107,6 +107,10 @@ public class GestorDocumentos {
             repositorio.clear();
         }
         notificarContenido();
+    }
+
+    public List<Documento> obtenerDocumentosCargados(){
+        return List.copyOf(repositorio);
     }
 
     public void subirArchivo(){
